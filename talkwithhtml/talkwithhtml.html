@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <input id="name" type="text" onkeydown="keydownMsg(event)">
+	<button id ="submit-btn" onclick="click1()">Submit</button>
+</body>
+<script>
+	function click1(){
+		var name = document.getElementById("name");
+		console.log(name.value);
+	}	
+	function keydownMsg(evt) {
+            evt = (evt) ? evt : ((window.event) ? window.event : "")
+            keyCode = evt.keyCode ? evt.keyCode : (evt.which ? evt.which : evt.charCode);
+            if (keyCode == 13) {
+                console.log(document.getElementById("name").value);//回车键弹出文本框信息
+            }
+            if (keyCode == 27) {
+                document.getElementById("name").value= '';
+            }
+        }
+</script>
+</html>
